@@ -152,7 +152,7 @@ function ProfileCard() {
         >
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-background/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
           <span className="relative flex items-center justify-center gap-2">
-            Let's Connect
+            Let `&apos; `s Connect
             <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
           </span>
         </Link>
@@ -371,7 +371,7 @@ export default function Page() {
           Technical Skills
         </h2>
         <p className="text-base text-muted-foreground leading-relaxed max-w-2xl">
-          A comprehensive overview of technologies I've mastered and continue to evolve with. 
+          A comprehensive overview of technologies I`&apos;`ve mastered and continue to evolve with. 
           Each skill represents hands-on experience building real-world applications.
         </p>
       </div>
