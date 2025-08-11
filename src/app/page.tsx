@@ -149,7 +149,7 @@ function ProfileCard() {
         >
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-background/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
           <span className="relative flex items-center justify-center gap-2">
-            Let's Connect
+            Let`&pos;` Connect
             <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
           </span>
         </Link>
@@ -378,7 +378,7 @@ export default function Page() {
     <BlurFade delay={BLUR_FADE_DELAY * 9}>
       <h2 className="text-xl font-bold">Skills</h2>
       <p className="text-sm text-neutral-400">
-        These are the technologies I've learned and worked with. This list is
+        These are the technologies I`&pos;`ve learned and worked with. This list is
         constantly evolving as I continue to learn and grow as a developer.
       </p>
     </BlurFade>
