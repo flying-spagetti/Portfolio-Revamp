@@ -69,8 +69,11 @@ function ProfileCard() {
               <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
                 {DATA.description.split('.')[0]}...
               </p>
+              <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                <div className="w-1 h-1 bg-green-500 rounded-full animate-pulse"></div>
+                <span>Available for opportunities</span>
               </div>
-
+            </div>
           </div>
         </div>
 
@@ -111,7 +114,7 @@ function ProfileCard() {
               <span className="text-xs">📍</span>
             </div>
             <span className="text-muted-foreground group-hover:text-foreground transition-colors duration-200">
-              Visakhapatnam, India
+              Hyderabad, India
             </span>
           </div>
         </div>
@@ -149,7 +152,7 @@ function ProfileCard() {
         >
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-background/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
           <span className="relative flex items-center justify-center gap-2">
-            Let`&pos;` Connect
+            Let's Connect
             <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
           </span>
         </Link>
@@ -300,31 +303,18 @@ export default function Page() {
         </div>
       </section>
       <section id="about">
-  <BlurFade delay={BLUR_FADE_DELAY * 3}>
-    <h2 className="text-3xl font-bold mb-6 relative inline-block text-foreground">
-      About
-      <span className="absolute left-0 -bottom-1 w-1/2 h-[2px] bg-gradient-to-r from-primary to-accent rounded-full"></span>
-    </h2>
-  </BlurFade>
-  <BlurFade delay={BLUR_FADE_DELAY * 4}>
-    <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
-      {`
-  **Final-year Computer Science undergrad** with 2+ years of hands-on full-stack development experience.  
-
-  Specialized in building **scalable, production-ready software** with a focus on [AI engineering and automation]().  
-
-  Delivered multiple **high-impact projects** in AI-powered accessibility, health tracking, and SaaS products.  
-
-  Contributed to **startups** by developing end-to-end products, from concept to deployment.  
-
-  Actively exploring **space-tech applications**, including remote sensing, anomaly detection, and real-time AI systems.  
-
-  Passionate about creating **cost-efficient, impactful solutions** using cutting-edge technology.
-        `}
-    </Markdown>
-  </BlurFade>
-</section>
-
+        <BlurFade delay={BLUR_FADE_DELAY * 3}>
+          <h2 className="text-3xl font-bold mb-6 relative inline-block text-foreground">
+            About
+            <span className="absolute left-0 -bottom-1 w-1/2 h-[2px] bg-gradient-to-r from-primary to-accent rounded-full"></span>
+          </h2>
+        </BlurFade>
+        <BlurFade delay={BLUR_FADE_DELAY * 4}>
+          <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
+            {DATA.summary.join("\n\n")}
+          </Markdown>
+        </BlurFade>
+      </section>
       <section id="work">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
@@ -374,72 +364,147 @@ export default function Page() {
         </div>
       </section>
       <section id="skills">
-  <div className="flex min-h-0 flex-col gap-y-6">
+  <div className="flex min-h-0 flex-col gap-y-8">
     <BlurFade delay={BLUR_FADE_DELAY * 9}>
-      <h2 className="text-xl font-bold">Skills</h2>
-      <p className="text-sm text-neutral-400">
-        These are the technologies I`&pos;`ve learned and worked with. This list is
-        constantly evolving as I continue to learn and grow as a developer.
-      </p>
+      <div className="space-y-4">
+        <h2 className="text-3xl font-bold tracking-tight text-foreground">
+          Technical Skills
+        </h2>
+        <p className="text-base text-muted-foreground leading-relaxed max-w-2xl">
+          A comprehensive overview of technologies I've mastered and continue to evolve with. 
+          Each skill represents hands-on experience building real-world applications.
+        </p>
+      </div>
     </BlurFade>
 
-    {[
-      {
-        title: "< Languages />",
-        items: ["Typescript", "Python"],
-      },
-      {
-        title: "< Frameworks / Libraries />",
-        items: ["React", "Next.js", "Tailwind CSS", "FastAPI", "LangChain", "Hugging Face"],
-      },
-      {
-        title: "< Backend & Runtime />",
-        items: ["Node.js"],
-      },
-      {
-        title: "< Database />",
-        items: ["Postgres", "Drizzle ORM"],
-      },
-      {
-        title: "< Developer Tools />",
-        items: ["Docker", "GitHub Actions"],
-      },
-    ].map((category, i) => (
-      <BlurFade key={category.title} delay={BLUR_FADE_DELAY * (10 + i)}>
-        <div className="flex flex-col gap-y-2">
-          <h3 className="text-sm font-mono text-neutral-400">{category.title}</h3>
-          <div className="flex flex-wrap gap-2">
-            {category.items.map((skill) => {
-              const iconMap: Record<string, JSX.Element> = {
-                "React": <i className="devicon-react-original colored text-lg"></i>,
-                "Next.js": <i className="devicon-nextjs-original text-lg"></i>,
-                "Typescript": <i className="devicon-typescript-plain colored text-lg"></i>,
-                "Node.js": <i className="devicon-nodejs-plain colored text-lg"></i>,
-                "Python": <i className="devicon-python-plain colored text-lg"></i>,
-                "FastAPI": <i className="devicon-fastapi-plain colored text-lg"></i>,
-                "Postgres": <i className="devicon-postgresql-plain colored text-lg"></i>,
-                "Drizzle ORM": <span className="text-yellow-500">🌦</span>,
-                "Docker": <i className="devicon-docker-plain colored text-lg"></i>,
-                "LangChain": <span className="text-purple-500">🔗</span>,
-                "Hugging Face": <span>🤗</span>,
-                "Tailwind CSS": <i className="devicon-tailwindcss-plain colored text-lg"></i>,
-                "GitHub Actions": <i className="devicon-github-original text-lg"></i>,
-              };
-
-              return (
-                <div
-                  key={skill}
-                  className="flex items-center gap-2 px-3 py-1 bg-neutral-800 rounded-md hover:bg-neutral-700 transition-colors"
-                >
-                  {iconMap[skill] || <span>⚙️</span>}
-                  <span className="text-sm">{skill}</span>
+    <div className="grid gap-8">
+      {[
+        {
+          title: "Languages",
+          emoji: "🔤",
+          items: ["TypeScript", "Python", "JavaScript"],
+          color: "from-blue-500/20 to-cyan-500/20"
+        },
+        {
+          title: "Frontend & UI",
+          emoji: "🎨",
+          items: ["React", "Next.js", "Tailwind CSS", "HTML5", "CSS3"],
+          color: "from-purple-500/20 to-pink-500/20"
+        },
+        {
+          title: "Backend & APIs",
+          emoji: "⚡",
+          items: ["Node.js", "FastAPI", "REST APIs"],
+          color: "from-green-500/20 to-emerald-500/20"
+        },
+        {
+          title: "Database & ORM",
+          emoji: "💾",
+          items: ["PostgreSQL", "Drizzle ORM", "SQL"],
+          color: "from-orange-500/20 to-red-500/20"
+        },
+        {
+          title: "AI & ML",
+          emoji: "🤖",
+          items: ["LangChain", "Hugging Face", "OpenAI API"],
+          color: "from-violet-500/20 to-purple-500/20"
+        },
+        {
+          title: "DevOps & Tools",
+          emoji: "🛠️",
+          items: ["Docker", "GitHub Actions", "Git", "VS Code"],
+          color: "from-yellow-500/20 to-orange-500/20"
+        },
+      ].map((category, i) => (
+        <BlurFade key={category.title} delay={BLUR_FADE_DELAY * (10 + i)}>
+          <div className="group relative">
+            {/* Background gradient */}
+            <div className={`absolute inset-0 bg-gradient-to-br ${category.color} rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl`}></div>
+            
+            <div className="relative bg-card/80 backdrop-blur-sm border border-border/60 rounded-xl p-6 hover:shadow-lg transition-all duration-300 group-hover:border-border">
+              {/* Category Header */}
+              <div className="flex items-center gap-3 mb-4">
+                <div className="flex items-center justify-center w-10 h-10 rounded-lg bg-secondary/60 group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-xl">{category.emoji}</span>
                 </div>
-              );
-            })}
+                <div>
+                  <h3 className="text-lg font-bold text-foreground font-mono tracking-wide">
+                    {category.title}
+                  </h3>
+                  <div className="h-0.5 w-12 bg-gradient-to-r from-foreground/60 to-transparent rounded-full mt-1"></div>
+                </div>
+              </div>
+
+              {/* Skills Grid */}
+              <div className="flex flex-wrap gap-2">
+                {category.items.map((skill, index) => {
+                  const getSkillIcon = (skillName: string) => {
+                    const iconMap: Record<string, { icon: string; color: string }> = {
+                      "TypeScript": { icon: "⚡", color: "text-blue-500" },
+                      "JavaScript": { icon: "📜", color: "text-yellow-500" },
+                      "Python": { icon: "🐍", color: "text-green-500" },
+                      "React": { icon: "⚛️", color: "text-cyan-400" },
+                      "Next.js": { icon: "▲", color: "text-foreground" },
+                      "Tailwind CSS": { icon: "🎨", color: "text-teal-500" },
+                      "HTML5": { icon: "📄", color: "text-orange-500" },
+                      "CSS3": { icon: "🎨", color: "text-blue-500" },
+                      "Node.js": { icon: "🟢", color: "text-green-500" },
+                      "FastAPI": { icon: "🚀", color: "text-teal-500" },
+                      "REST APIs": { icon: "🔗", color: "text-purple-500" },
+                      "PostgreSQL": { icon: "🐘", color: "text-blue-600" },
+                      "Drizzle ORM": { icon: "💧", color: "text-green-400" },
+                      "SQL": { icon: "🗄️", color: "text-orange-500" },
+                      "LangChain": { icon: "🔗", color: "text-purple-500" },
+                      "Hugging Face": { icon: "🤗", color: "text-yellow-500" },
+                      "OpenAI API": { icon: "🧠", color: "text-green-400" },
+                      "Docker": { icon: "🐳", color: "text-blue-500" },
+                      "GitHub Actions": { icon: "⚙️", color: "text-gray-500" },
+                      "Git": { icon: "🌿", color: "text-orange-500" },
+                      "VS Code": { icon: "💻", color: "text-blue-500" },
+                    };
+                    return iconMap[skillName] || { icon: "⚙️", color: "text-muted-foreground" };
+                  };
+
+                  const { icon, color } = getSkillIcon(skill);
+
+                  return (
+                    <div
+                      key={skill}
+                      className="group/skill relative flex items-center gap-2.5 px-4 py-2.5 bg-secondary/40 hover:bg-secondary/70 border border-border/40 hover:border-border/70 rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-md"
+                      style={{ animationDelay: `${index * 50}ms` }}
+                    >
+                      {/* Skill icon with hover effect */}
+                      <span className={`text-base group-hover/skill:scale-125 transition-transform duration-300 ${color}`}>
+                        {icon}
+                      </span>
+                      
+                      {/* Skill name */}
+                      <span className="text-sm font-medium text-foreground group-hover/skill:text-foreground">
+                        {skill}
+                      </span>
+
+                      {/* Subtle hover glow */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-foreground/5 to-transparent rounded-lg opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
           </div>
-        </div>
-      </BlurFade>
-    ))}
+        </BlurFade>
+      ))}
+    </div>
+
+    {/* Additional Info */}
+    <BlurFade delay={BLUR_FADE_DELAY * 17}>
+      <div className="text-center p-6 bg-secondary/20 border border-border/30 rounded-xl">
+        <p className="text-sm text-muted-foreground">
+          Always learning and exploring new technologies. Currently diving deeper into 
+          <span className="text-foreground font-medium mx-1">AI/ML workflows</span> and 
+          <span className="text-foreground font-medium mx-1">cloud architecture</span>.
+        </p>
+      </div>
+    </BlurFade>
   </div>
 </section>
 
