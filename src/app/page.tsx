@@ -69,10 +69,7 @@ function ProfileCard() {
               <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
                 {DATA.description.split('.')[0]}...
               </p>
-              <div className="flex items-center gap-1 text-xs text-muted-foreground">
-                <div className="w-1 h-1 bg-green-500 rounded-full animate-pulse"></div>
-                <span>Available for opportunities</span>
-              </div>
+
             </div>
           </div>
         </div>
@@ -152,7 +149,7 @@ function ProfileCard() {
         >
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-background/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
           <span className="relative flex items-center justify-center gap-2">
-            Let `&apos; `s Connect
+            Let&apos;s Connect
             <span className="group-hover:translate-x-1 transition-transform duration-300">→</span>
           </span>
         </Link>
